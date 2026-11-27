@@ -1,18 +1,20 @@
-"""One Word From Your Ex entry: writes a single line to entry.txt.
+"""Entry for 'One Word From Your Ex' (make.fun).
 
-Stdlib only, deterministic, no network, no randomness.
+Writes a single word, 1 to 24 characters, to /output/entry.txt: the word the
+entrant's ex would use to describe them — the funniest, most painfully
+honest one.
 """
 
 import os
 
-LINE = 'Exhausting'
+ENTRY = "Almost"
 
 
 def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(LINE + "\n")
+        f.write(ENTRY)
 
 
 if __name__ == "__main__":
